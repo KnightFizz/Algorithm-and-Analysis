@@ -1,0 +1,9 @@
+#add 2 binary number 
+def add_binary(a, b):
+    carry = 0
+    c = []
+    for i in range(len(a)):
+        c.append(a[i] ^ b[i] ^ carry)
+        carry = (a[i] and b[i]) or (a[i] and carry) or (b[i] and carry)
+    c.append(carry)
+    return c
